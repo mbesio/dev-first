@@ -1,0 +1,34 @@
+{
+  "name": "rpt24-mvp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "build": "webpack --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mbesio/rpt24-mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mbesio/rpt24-mvp/issues"
+  },
+  "homepage": "https://github.com/mbesio/rpt24-mvp#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.6",
+    "path": "^0.12.7",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "router": "^1.3.5",
+    "webpack": "^5.1.3",
+    "webpack-cli": "^4.1.0"
+  }
+}
