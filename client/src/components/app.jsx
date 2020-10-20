@@ -4,6 +4,8 @@ import ReactDOM from 'react-dom';
 
 import Landing from './landing.jsx';
 import Form1 from './form1.jsx';
+import Form2 from './form2.jsx';
+import Form3 from './form3.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -26,12 +28,12 @@ class App extends React.Component {
       location: '',
       // from 2 Information
       yearsExperience: '',
-      techStack1Skill: '',
-      techStack1SkillLevel: '',
-      techStack2Skill: '',
-      techStack2SkillLevel: '',
-      techStack3Skill: '',
-      techStack3SkillLevel: '',
+      language: '',
+      languageSkill: '',
+      frontEndFramework: '',
+      frontEndFrameworkSkill: '',
+      backEndFramework: '',
+      backEndFrameworkSkill: '',
       //IndustryInterest, I could have all these industries potentially - https://www.cbinsights.com/research/tech-industry-exits/
       // from 3 Information
       healthAndWellness: false,
@@ -45,6 +47,8 @@ class App extends React.Component {
       <div>
         <Landing/>
         <Form1/>
+        <Form2/>
+        <Form3/>
       </div>
     );
   }
