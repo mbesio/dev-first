@@ -6,6 +6,7 @@ import Landing from './landing.jsx';
 import Form1 from './form1.jsx';
 import Form2 from './form2.jsx';
 import Form3 from './form3.jsx';
+import Summary from './summary.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -44,6 +45,7 @@ class App extends React.Component {
     this.renderForm1 = this.renderForm1.bind(this);
     this.renderForm2 = this.renderForm2.bind(this);
     this.renderForm3 = this.renderForm3.bind(this);
+    this.renderSummary = this.renderSummary.bind(this);
   }
 
   renderForm1(e) {
@@ -69,13 +71,22 @@ class App extends React.Component {
     })
   }
 
+  renderSummary(e) {
+    e.preventDefault();
+    this.setState({
+      form3IsVisible: false,
+      reviewIsVisible: true
+    })
+  }
+
   render() {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2}/>}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3}/>}
-        { this.state.form3IsVisible && <Form3/>}
+        { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary}/>}
+        { this.state.reviewIsVisible && <Summary state={this.state}/>}
       </div>
     );
   }
