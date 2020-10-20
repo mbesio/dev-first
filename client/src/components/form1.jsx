@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 var Form1 = (props) => (
   <div>
     <h1> Personal information </h1>
-    <form onSubmit={(e) => { props.renderForm2(e)}}>
+    <form onSubmit={(e) => { props.renderForm2(e)}} onChange={(e) => {props.updateStateFromForm1(e)}}>
       <div>
         <label for="firstName"> First Name: </label>
         <input type="text" name="firstName"></input>

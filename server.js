@@ -33,6 +33,7 @@ app.get('/jobs', (req, res) => {
       jobs.push(currentJob);
       console.log('jobs ', jobs)
     }
+    // return the jobs array to the client
     res.end(JSON.stringify(jobs));
   });
 });
