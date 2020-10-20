@@ -7,7 +7,7 @@ var Landing = (props) => (
     <h1> Welcome to devfirst.io </h1>
     <h2> Land your dream software engineering job today </h2>
     <div>
-      <button type = "button" name = "Signup" onClick = {() => console.log('hello, signup button clicked')}> Signup </button>
+      <button type = "button" name = "Signup" onClick = {(e) => { props.renderForm1(e) }}> Signup </button>
       <button type = "button" name = "Login" onClick = {() => console.log('hello, login button clicked')}> Login </button>
     </div>
   </div>

@@ -41,14 +41,24 @@ class App extends React.Component {
       customerRelationshipManagement: false,
       travel: false
     }
+    this.renderForm1 = this.renderForm1.bind(this);
   }
+
+  renderForm1(e) {
+    this.setState({
+      landingIsVisible: false,
+      form1IsVisible: true
+    })
+  }
+
+
   render() {
     return (
       <div>
-        <Landing/>
-        <Form1/>
-        <Form2/>
-        <Form3/>
+        { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
+        { this.state.form1IsVisible && <Form1/>}
+        { this.state.form2IsVisible && <Form2/>}
+        { this.state.form3IsVisible && <Form3/>}
       </div>
     );
   }
