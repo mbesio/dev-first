@@ -49,6 +49,7 @@ class App extends React.Component {
 
     this.updateStateFromForm1 = this.updateStateFromForm1.bind(this);
     this.updateStateFromForm2 = this.updateStateFromForm2.bind(this);
+    this.updateStateFromForm3 = this.updateStateFromForm3.bind(this);
   }
 
   renderForm1(e) {
@@ -94,13 +95,28 @@ class App extends React.Component {
     })
   }
 
+  updateStateFromForm3(e) {
+    if (e.target.checked) {
+      this.setState({
+        [e.target.name]: true
+      })
+    } else {
+      this.setState({
+        [e.target.name]: false
+      })
+    }
+    console.log('e.target.checked', e.target.checked);
+    console.log('event.target.name ', e.target.name);
+    console.log('event.target.value ', e.target.value);
+  }
+
   render() {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} />}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
-        { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary}/>}
+        { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
         { this.state.reviewIsVisible && <Summary state={this.state}/>}
       </div>
     );

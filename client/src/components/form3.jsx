@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom';
 var From3 = (props) => (
   <div>
     <h1> Interests </h1>
-    <form onSubmit={(e) => {props.renderSummary(e)}}>
+    <form onSubmit={(e) => {props.renderSummary(e)}} onChange={(e) => {props.updateStateFromForm3(e)}}>
       <div>
         <input type="checkbox" name="healthAndWellness"></input>
         <label for="healthAndWellness"> Health and Wellness </label>
