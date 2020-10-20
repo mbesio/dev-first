@@ -28,7 +28,7 @@ var Summary = (props) => (
       {props.state.travel && <div> ✓ travel </div>}
 
       <div>
-        <button type = "button" name = "Confirm" onClick = {(e) =>  console.log('all is correct, show me jobs')}> This is correct, show me tailored jobs! </button>
+        <button type = "button" name = "Confirm" onClick = {(e) => {props.renderJobs(e)}}> This is correct, show me tailored jobs! </button>
         <button type = "button" name = "Update" onClick = {() => console.log('I want to update my preferences')}> I want to update my profile </button>
       </div>
 

@@ -7,6 +7,7 @@ import Form1 from './form1.jsx';
 import Form2 from './form2.jsx';
 import Form3 from './form3.jsx';
 import Summary from './summary.jsx';
+import Jobs from './jobs.jsx';
 
 class App extends React.Component {
   constructor (props) {
@@ -19,7 +20,7 @@ class App extends React.Component {
       form2IsVisible: false,
       form3IsVisible: false,
       reviewIsVisible: false,
-      recommendationsIsVisible: false,
+      jobsIsVisible: false,
       // State to capture user profile
       // from 1 Information
       firstName: '',
@@ -46,6 +47,7 @@ class App extends React.Component {
     this.renderForm2 = this.renderForm2.bind(this);
     this.renderForm3 = this.renderForm3.bind(this);
     this.renderSummary = this.renderSummary.bind(this);
+    this.renderJobs = this.renderJobs.bind(this);
 
     this.updateStateFromForm1 = this.updateStateFromForm1.bind(this);
     this.updateStateFromForm2 = this.updateStateFromForm2.bind(this);
@@ -83,6 +85,14 @@ class App extends React.Component {
     })
   }
 
+  renderJobs(e) {
+    e.preventDefault();
+    this.setState({
+      reviewIsVisible: false,
+      jobsIsVisible: true
+    })
+  }
+
   updateStateFromForm1(e) {
     this.setState({
       [e.target.name]: e.target.value
@@ -105,9 +115,6 @@ class App extends React.Component {
         [e.target.name]: false
       })
     }
-    console.log('e.target.checked', e.target.checked);
-    console.log('event.target.name ', e.target.name);
-    console.log('event.target.value ', e.target.value);
   }
 
   render() {
@@ -117,7 +124,8 @@ class App extends React.Component {
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} />}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
-        { this.state.reviewIsVisible && <Summary state = {this.state} />}
+        { this.state.reviewIsVisible && <Summary renderJobs = {this.renderJobs} state = {this.state} />}
+        { this.state.jobsIsVisible && <Jobs />}
       </div>
     );
   }
