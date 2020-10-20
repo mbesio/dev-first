@@ -43,6 +43,7 @@ class App extends React.Component {
     }
     this.renderForm1 = this.renderForm1.bind(this);
     this.renderForm2 = this.renderForm2.bind(this);
+    this.renderForm3 = this.renderForm3.bind(this);
   }
 
   renderForm1(e) {
@@ -60,13 +61,20 @@ class App extends React.Component {
     })
   }
 
+  renderForm3(e) {
+    e.preventDefault();
+    this.setState({
+      form2IsVisible: false,
+      form3IsVisible: true
+    })
+  }
 
   render() {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2}/>}
-        { this.state.form2IsVisible && <Form2/>}
+        { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3}/>}
         { this.state.form3IsVisible && <Form3/>}
       </div>
     );
