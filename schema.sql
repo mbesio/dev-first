@@ -11,7 +11,7 @@ CREATE TABLE users (
   email VARCHAR(254),
   password VARCHAR(254),
   location VARCHAR(254),
-  yearsExperience INT,
+  yearsExperience VARCHAR(2),
   language VARCHAR(20),
   languageSkill VARCHAR(10),
   frontEndFramework VARCHAR(20),

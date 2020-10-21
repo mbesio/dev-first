@@ -10,10 +10,10 @@ var Jobs = (props) => (
         <div> Description: {props.state.job0.description}</div>
         <div> Location: {props.state.job0.location}</div>
       <h3>Tailored job number 2</h3>
-        <div> Company: {props.state.job0.company}</div>
-        <div> Title: {props.state.job0.title}</div>
-        <div> Description: {props.state.job0.description}</div>
-        <div> Location: {props.state.job0.location}</div>
+        <div> Company: {props.state.job1.company}</div>
+        <div> Title: {props.state.job1.title}</div>
+        <div> Description: {props.state.job1.description}</div>
+        <div> Location: {props.state.job1.location}</div>
       <h3>Tailored job number 3</h3>
         <div> Company: {props.state.job2.company}</div>
         <div> Title: {props.state.job2.title}</div>

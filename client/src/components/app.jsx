@@ -69,6 +69,7 @@ class App extends React.Component {
     this.updateStateFromForm3 = this.updateStateFromForm3.bind(this);
 
     this.getTailoredJobs = this.getTailoredJobs.bind(this);
+    this.addUserProfile = this.addUserProfile.bind(this);
   }
 
   renderForm1(e) {
@@ -134,6 +135,43 @@ class App extends React.Component {
     }
   }
 
+  // add a method to go write user profile information in the database
+  addUserProfile() {
+    // get request to go post some data
+    axios.post('/newuser', {
+      firstName: this.state.firstName,
+      lastName: this.state.lastName,
+      email: this.state.email,
+      password: this.state.password,
+      location: this.state.location,
+      yearsExperience: this.state.yearsExperience,
+      language: this.state.language,
+      languageSkill: this.state.languageSkill,
+      frontEndFramework: this.state.frontEndFramework,
+      frontEndFrameworkSkill: this.state.frontEndFrameworkSkill,
+      backEndFramework: this.state.backEndFramework,
+      backEndFrameworkSkill: this.state.backEndFrameworkSkill,
+      aerospace: this.state.aerospace,
+      construction: this.state.construction,
+      education: this.state.education,
+      energy: this.state.energy,
+      entertainment: this.state.entertainment,
+      finance: this.state.finance,
+      food: this.state.food,
+      healthcare: this.state.healthcare,
+      hospitality: this.state.hospitality,
+      tech: this.state.tech,
+      telco: this.state.telco,
+      transport: this.state.transport
+    })
+      .then((res) => {
+        console.log('posted a new user record to the database!');
+        console.log('Res ', res);
+      })
+  }
+
+
+  // method to get tailored jobs for users
   getTailoredJobs() {
     var language = this.state.location;
     var keyword0 = this.state.language;
@@ -166,7 +204,7 @@ class App extends React.Component {
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} />}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
-        { this.state.reviewIsVisible && <Summary renderJobs = {this.renderJobs} getTailoredJobs={this.getTailoredJobs} state = {this.state} />}
+        { this.state.reviewIsVisible && <Summary getTailoredJobs = {this.getTailoredJobs} addUserProfile={this.addUserProfile} state = {this.state} />}
         { this.state.jobsIsVisible && <Jobs state = {this.state} />}
       </div>
     );
