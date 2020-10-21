@@ -2,6 +2,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
+import axios from 'axios';
+
 import Landing from './landing.jsx';
 import Form1 from './form1.jsx';
 import Form2 from './form2.jsx';
@@ -52,6 +54,8 @@ class App extends React.Component {
     this.updateStateFromForm1 = this.updateStateFromForm1.bind(this);
     this.updateStateFromForm2 = this.updateStateFromForm2.bind(this);
     this.updateStateFromForm3 = this.updateStateFromForm3.bind(this);
+
+    this.getTailoredJobs = this.getTailoredJobs.bind(this);
   }
 
   renderForm1(e) {
@@ -117,6 +121,20 @@ class App extends React.Component {
     }
   }
 
+  getTailoredJobs() {
+    axios({
+      method: 'get',
+      url: '/jobs',
+      params: {
+        location: 'California',
+        keyWords: ['javascript', 'react' , 'node']
+      }
+    })
+      .then( (data) => {
+        console.log('data: ', data);
+      })
+  }
+
   render() {
     return (
       <div>
@@ -124,7 +142,7 @@ class App extends React.Component {
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} />}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
-        { this.state.reviewIsVisible && <Summary renderJobs = {this.renderJobs} state = {this.state} />}
+        { this.state.reviewIsVisible && <Summary renderJobs = {this.renderJobs} getTailoredJobs={this.getTailoredJobs} state = {this.state} />}
         { this.state.jobsIsVisible && <Jobs />}
       </div>
     );
