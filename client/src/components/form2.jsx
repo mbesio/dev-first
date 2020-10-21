@@ -15,7 +15,7 @@ var From2 = (props) => (
           <option value=""> -- Select a language -- </option>
           <option value="javascript"> Javascript </option>
           <option value="python"> Python </option>
-          <option value="c++"> C++ </option>
+          <option value="c"> C </option>
         </select>
         <label for="languageSkill">Level of Knowledge: </label>
         <select name="languageSkill">
@@ -46,7 +46,7 @@ var From2 = (props) => (
         <label for="backEndFramework"> Preferred backend framework </label>
         <select name="backEndFramework">
           <option value=""> -- Select a backend framework -- </option>
-          <option value="express"> Express </option>
+          <option value="node"> Node </option>
           <option value="ruby"> Ruby </option>
           <option value="django"> Django </option>
         </select>

@@ -17,6 +17,8 @@ app.get('/jobs', (req, res) => {
 
   var location = req.query.location;
   var keyWords = req.query.keyWords;
+  console.log('location ', location);
+  console.log('keyWords ', keyWords);
 
   getJobs(location, keyWords, (response) => {
     // parse top 3 jobs and send them back to the client

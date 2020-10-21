@@ -135,12 +135,16 @@ class App extends React.Component {
   }
 
   getTailoredJobs() {
+    var language = this.state.location;
+    var keyword0 = this.state.language;
+    var keyword1 = this.state.frontEndFramework;
+    var keyword2 = this.state.backEndFramework;
     axios({
       method: 'get',
       url: '/jobs',
       params: {
-        location: 'California',
-        keyWords: ['javascript', 'react' , 'node']
+        location: language,
+        keyWords: [keyword0, keyword1 , keyword2]
       }
     })
       .then( (data) => {
