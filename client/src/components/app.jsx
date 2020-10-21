@@ -131,7 +131,7 @@ class App extends React.Component {
       }
     })
       .then( (data) => {
-        console.log('data: ', data);
+        console.log('data: ', data.data);
       })
   }
 
