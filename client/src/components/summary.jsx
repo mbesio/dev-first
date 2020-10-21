@@ -22,10 +22,18 @@ var Summary = (props) => (
       <div>backEndFrameworkSkill: {props.state.backEndFrameworkSkill}</div>
 
       <h3> Interests </h3>
-      {props.state.healthAndWellness && <div> ✓ healthAndWellness</div>}
-      {props.state.dataStorageAndSecurity && <div> ✓ dataStorageAndSecurity</div>}
-      {props.state.customerRelationshipManagement && <div> ✓ customerRelationshipManagement </div>}
-      {props.state.travel && <div> ✓ travel </div>}
+      {props.state.aerospace && <div> ✓ Aerospace</div>}
+      {props.state.construction && <div> ✓ Construction</div>}
+      {props.state.education && <div> ✓ Education </div>}
+      {props.state.energy && <div> ✓ Energy </div>}
+      {props.state.entertainment && <div> ✓ Entertainment </div>}
+      {props.state.finance && <div> ✓ Finance </div>}
+      {props.state.food && <div> ✓ Food </div>}
+      {props.state.healthcare && <div> ✓ Healthcare </div>}
+      {props.state.hospitality && <div> ✓ Hospitality </div>}
+      {props.state.tech && <div> ✓ Tech </div>}
+      {props.state.telco && <div> ✓ Telco </div>}
+      {props.state.transport && <div> ✓ Transport </div>}
 
       <div>
         <button type = "button" name = "Confirm" onClick = {() => {props.getTailoredJobs()}}> This is correct, show me tailored jobs! </button>

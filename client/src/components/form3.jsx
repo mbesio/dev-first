@@ -6,20 +6,48 @@ var From3 = (props) => (
     <h1> Interests </h1>
     <form onSubmit={(e) => {props.renderSummary(e)}} onChange={(e) => {props.updateStateFromForm3(e)}}>
       <div>
-        <input type="checkbox" name="healthAndWellness"></input>
-        <label for="healthAndWellness"> Health and Wellness </label>
+        <input type="checkbox" name="aerospace"></input>
+        <label for="aerospace"> Aerospace </label>
       </div>
       <div>
-        <input type="checkbox" name="dataStorageAndSecurity"></input>
-        <label for="dataStorageAndSecurity"> Data Storage and Security </label>
+        <input type="checkbox" name="construction"></input>
+        <label for="construction"> Construction </label>
       </div>
       <div>
-        <input type="checkbox" name="customerRelationshipManagement"></input>
-        <label for="customerRelationshipManagement"> Customer Relationship Management </label>
+        <input type="checkbox" name="education"></input>
+        <label for="education"> Education </label>
       </div>
       <div>
-        <input type="checkbox" name="travel"></input>
-        <label for="travel"> Travel </label>
+        <input type="checkbox" name="energy"></input>
+        <label for="energy"> Energy </label>
+      </div>
+      <div>
+        <input type="checkbox" name="entertainment"></input>
+        <label for="entertainment"> Entertainment </label>
+      </div>
+      <div>
+        <input type="checkbox" name="finance"></input>
+        <label for="finance"> Finance </label>
+      </div>
+      <div>
+        <input type="checkbox" name="food"></input>
+        <label for="food"> Food </label>
+      </div>
+      <div>
+        <input type="checkbox" name="healthcare"></input>
+        <label for="healthcare"> Healthcare </label>
+      </div>
+      <div>
+        <input type="checkbox" name="tech"></input>
+        <label for="tech"> Tech </label>
+      </div>
+      <div>
+        <input type="checkbox" name="telco"></input>
+        <label for="telco"> Telco </label>
+      </div>
+      <div>
+        <input type="checkbox" name="transport"></input>
+        <label for="transport"> Transport </label>
       </div>
       <div>
         <button type="submit"> Submit </button>

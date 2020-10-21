@@ -40,10 +40,19 @@ class App extends React.Component {
       backEndFrameworkSkill: '',
       //IndustryInterest, I could have all these industries potentially - https://www.cbinsights.com/research/tech-industry-exits/
       // from 3 Information
-      healthAndWellness: false,
-      dataStorageAndSecurity: false,
-      customerRelationshipManagement: false,
-      travel: false,
+      aerospace: false,
+      construction: false,
+      education: false,
+      energy: false,
+      entertainment: false,
+      finance: false,
+      food: false,
+      healthcare: false,
+      hospitality: false,
+      tech: false,
+      telco: false,
+      transport: false,
+
       // tailored jobs
       job0: {},
       job1: {},
