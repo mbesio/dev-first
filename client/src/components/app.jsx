@@ -43,7 +43,11 @@ class App extends React.Component {
       healthAndWellness: false,
       dataStorageAndSecurity: false,
       customerRelationshipManagement: false,
-      travel: false
+      travel: false,
+      // tailored jobs
+      job0: {},
+      job1: {},
+      job2: {}
     }
     this.renderForm1 = this.renderForm1.bind(this);
     this.renderForm2 = this.renderForm2.bind(this);
@@ -89,8 +93,8 @@ class App extends React.Component {
     })
   }
 
-  renderJobs(e) {
-    e.preventDefault();
+  renderJobs() {
+    //e.preventDefault();
     this.setState({
       reviewIsVisible: false,
       jobsIsVisible: true
@@ -132,6 +136,13 @@ class App extends React.Component {
     })
       .then( (data) => {
         console.log('data: ', data.data);
+        this.setState({
+          job0: data.data[0],
+          job1: data.data[1],
+          job2: data.data[2],
+          reviewIsVisible: false,
+          jobsIsVisible: true
+        })
       })
   }
 
@@ -143,7 +154,7 @@ class App extends React.Component {
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
         { this.state.reviewIsVisible && <Summary renderJobs = {this.renderJobs} getTailoredJobs={this.getTailoredJobs} state = {this.state} />}
-        { this.state.jobsIsVisible && <Jobs />}
+        { this.state.jobsIsVisible && <Jobs state = {this.state} />}
       </div>
     );
   }
