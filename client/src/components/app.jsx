@@ -30,6 +30,7 @@ class App extends React.Component {
       email: '',
       password: '',
       location: '',
+      picture: '',
       // from 2 Information
       yearsExperience: '',
       language: '',
@@ -67,6 +68,8 @@ class App extends React.Component {
     this.updateStateFromForm1 = this.updateStateFromForm1.bind(this);
     this.updateStateFromForm2 = this.updateStateFromForm2.bind(this);
     this.updateStateFromForm3 = this.updateStateFromForm3.bind(this);
+
+    this.addPicture = this.addPicture.bind(this);
 
     this.getTailoredJobs = this.getTailoredJobs.bind(this);
     this.addUserProfile = this.addUserProfile.bind(this);
@@ -135,6 +138,12 @@ class App extends React.Component {
     }
   }
 
+  addPicture(e) {
+    this.setState({
+      picture: e.target.files[0]
+    })
+  }
+
   // add a method to go write user profile information in the database
   addUserProfile() {
     // get request to go post some data
@@ -201,7 +210,7 @@ class App extends React.Component {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
-        { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} />}
+        { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} addPicture={this.addPicture}/>}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
         { this.state.reviewIsVisible && <Summary getTailoredJobs = {this.getTailoredJobs} addUserProfile={this.addUserProfile} state = {this.state} />}

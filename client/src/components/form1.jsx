@@ -26,6 +26,10 @@ var Form1 = (props) => (
         <input type="text" name="location"></input>
       </div>
       <div>
+        <label>Add a profile picture </label>
+        <input type="file" onChange={(e) => {props.addPicture(e)}}></input>
+      </div>
+      <div>
         <button type="submit"> Submit </button>
       </div>
     </form>

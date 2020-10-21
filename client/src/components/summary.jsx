@@ -11,6 +11,8 @@ var Summary = (props) => (
       <div>email: {props.state.email} </div>
       <div>password: {props.state.password}</div>
       <div>location: {props.state.location}</div>
+      <div>profile picture</div>
+      <img src={URL.createObjectURL(props.state.picture)} width="200"/>
 
       <h3> Professional experience </h3>
       <div>yearsExperience: {props.state.yearsExperience}</div>
