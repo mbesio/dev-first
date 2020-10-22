@@ -33,6 +33,14 @@ app.post('/newuser', (req, res) => {
 
 });
 
+app.get('/login', (req, res) => {
+  // check if user and pwd exist in the user database
+    // if true, pass back infomration for thet user stored in the database to the client
+  // else, return message that user does not exist
+  console.log('need to query the database')
+  res.end('hi');
+})
+
 app.get('/jobs', (req, res) => {
   console.log('received a get request to go and fetch some tailored jobs');
 

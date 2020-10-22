@@ -5,7 +5,7 @@ var Login = (props) => (
   <div>
     <Container>
       <h1> Login </h1>
-      <Form onSubmit={(e) => { console.log('hit a get request to see if the user is already existing in the database')} } onChange= {(e) => {props.updateLoginInfo(e)}}>
+      <Form onSubmit={() => { props.checkIfUserExists()} } onChange= {(e) => { props.updateLoginInfo(e) }}>
         <div>
           <label for="loginEmail"> email </label>
           <input type="text" name="loginEmail"></input>

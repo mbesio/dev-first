@@ -81,6 +81,8 @@ class App extends React.Component {
 
     this.getTailoredJobs = this.getTailoredJobs.bind(this);
     this.addUserProfile = this.addUserProfile.bind(this);
+
+    this.checkIfUserExists = this.checkIfUserExists.bind(this);
   }
 
   renderForm1(e) {
@@ -201,6 +203,16 @@ class App extends React.Component {
       })
   }
 
+  // check if user that is trying to login exists
+  checkIfUserExists(){
+    axios.get('/login', {loginEmail: this.state.loginEmail,
+    loginPassword: this.state.loginPassword})
+      .then ((res) => {
+        console.log('res ', res);
+        console.log('this is what came back from the get request');
+      })
+  }
+
 
   // method to get tailored jobs for users
   getTailoredJobs() {
@@ -232,7 +244,7 @@ class App extends React.Component {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1} renderLogin ={this.renderLogin}/>}
-        { this.state.loginIsVisible && <Login updateLoginInfo={this.updateLoginInfo}/>}
+        { this.state.loginIsVisible && <Login updateLoginInfo={this.updateLoginInfo} checkIfUserExists={this.checkIfUserExists} />}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} addPicture={this.addPicture}/>}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
