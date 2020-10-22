@@ -1,5 +1,7 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import noProfilePic from './images/noprofile.png'
+
+
 
 var Summary = (props) => (
   <div>
@@ -12,7 +14,7 @@ var Summary = (props) => (
       <div>password: {props.state.password}</div>
       <div>location: {props.state.location}</div>
       <div>profile picture</div>
-      <img src={URL.createObjectURL(props.state.picture)} width="200"/>
+      <img src={props.state.picture} width="200"/>
 
       <h3> Professional experience </h3>
       <div>yearsExperience: {props.state.yearsExperience}</div>

@@ -11,6 +11,8 @@ import Form3 from './form3.jsx';
 import Summary from './summary.jsx';
 import Jobs from './jobs.jsx';
 
+import noProfilePic from './images/noprofile.png'
+
 class App extends React.Component {
   constructor (props) {
     super(props);
@@ -30,7 +32,7 @@ class App extends React.Component {
       email: '',
       password: '',
       location: '',
-      picture: '',
+      picture: noProfilePic,
       // from 2 Information
       yearsExperience: '',
       language: '',
@@ -140,7 +142,7 @@ class App extends React.Component {
 
   addPicture(e) {
     this.setState({
-      picture: e.target.files[0]
+      picture: URL.createObjectURL(e.target.files[0])
     })
   }
 
