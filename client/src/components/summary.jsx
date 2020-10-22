@@ -1,20 +1,28 @@
 import React from 'react';
 import noProfilePic from './images/noprofile.png'
+import { Button, Container } from 'semantic-ui-react'
 
 
 
 var Summary = (props) => (
   <div>
+    <Container>
       <h1> Is everything correct? </h1>
 
       <h3> Personal information </h3>
-      <div>firstName: {props.state.firstName} </div>
-      <div>lastName: {props.state.lastName} </div>
-      <div>email: {props.state.email} </div>
-      <div>password: {props.state.password}</div>
-      <div>location: {props.state.location}</div>
-      <div>profile picture</div>
-      <img src={props.state.picture} width="200"/>
+      <div class="ui three column grid">
+        <div class="ui segment">
+          <div>firstName: {props.state.firstName} </div>
+          <div>lastName: {props.state.lastName} </div>
+          <div>email: {props.state.email} </div>
+          <div>password: {props.state.password}</div>
+          <div>location: {props.state.location}</div>
+        </div>
+        <div class="ui segment">
+          <div>profile picture</div>
+          <img src={props.state.picture} width="200"/>
+        </div>
+      </div>
 
       <h3> Professional experience </h3>
       <div>yearsExperience: {props.state.yearsExperience}</div>
@@ -40,10 +48,10 @@ var Summary = (props) => (
       {props.state.transport && <div> ✓ Transport </div>}
 
       <div>
-        <button type = "button" name = "Confirm" onClick = {() => {props.addUserProfile(); props.getTailoredJobs()}}> This is correct, show me tailored jobs! </button>
-        <button type = "button" name = "Update" onClick = {() => console.log('I want to update my preferences')}> I want to update my profile </button>
+        <Button primary type = "button" name = "Confirm" onClick = {() => {props.addUserProfile(); props.getTailoredJobs()}}> This is correct, show me tailored jobs! </Button>
+        <Button primary type = "button" name = "Update" onClick = {() => console.log('I want to update my preferences')}> I want to update my profile </Button>
       </div>
-
+    </Container>
   </div>
 
 );
