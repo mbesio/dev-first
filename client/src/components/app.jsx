@@ -17,8 +17,10 @@ import noProfilePic from './images/noprofile.png'
 class App extends React.Component {
   constructor (props) {
     super(props);
-    //
     this.state = {
+      // state to check if user that is trying to login already exists
+      loginEmail: '',
+      loginPassword: '',
       // State to decide which page to render to the screen
       landingIsVisible: true,
       form1IsVisible: false,
@@ -70,6 +72,7 @@ class App extends React.Component {
     this.renderSummary = this.renderSummary.bind(this);
     this.renderJobs = this.renderJobs.bind(this);
 
+    this.updateLoginInfo = this.updateLoginInfo.bind(this);
     this.updateStateFromForm1 = this.updateStateFromForm1.bind(this);
     this.updateStateFromForm2 = this.updateStateFromForm2.bind(this);
     this.updateStateFromForm3 = this.updateStateFromForm3.bind(this);
@@ -88,8 +91,6 @@ class App extends React.Component {
   }
 
   renderLogin(e) {
-    console.log('clicked the sign in form')
-    console.log(e)
     e.preventDefault();
     this.setState({
       landingIsVisible: false,
@@ -126,6 +127,12 @@ class App extends React.Component {
     this.setState({
       reviewIsVisible: false,
       jobsIsVisible: true
+    })
+  }
+
+  updateLoginInfo(e) {
+    this.setState({
+      [e.target.name]: e.target.value
     })
   }
 
@@ -225,7 +232,7 @@ class App extends React.Component {
     return (
       <div>
         { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1} renderLogin ={this.renderLogin}/>}
-        { this.state.loginIsVisible && <Login />}
+        { this.state.loginIsVisible && <Login updateLoginInfo={this.updateLoginInfo}/>}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} addPicture={this.addPicture}/>}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}

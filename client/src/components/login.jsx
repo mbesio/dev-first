@@ -5,14 +5,14 @@ var Login = (props) => (
   <div>
     <Container>
       <h1> Login </h1>
-      <Form onSubmit={() => { console.log('trying to login')} }>
+      <Form onSubmit={(e) => { console.log('hit a get request to see if the user is already existing in the database')} } onChange= {(e) => {props.updateLoginInfo(e)}}>
         <div>
-          <label for="email"> email </label>
-          <input type="text" name="email"></input>
+          <label for="loginEmail"> email </label>
+          <input type="text" name="loginEmail"></input>
         </div>
         <div>
-          <label for="password"> password </label>
-          <input type="password" name="password"></input>
+          <label for="loginPassword"> password </label>
+          <input type="password" name="loginPassword"></input>
         </div>
         <div>
           <Button primary type="submit"> Login </Button>
