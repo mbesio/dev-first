@@ -1,8 +1,9 @@
 import React from 'react';
-import { Button, Form } from 'semantic-ui-react'
+import { Button, Form, Container } from 'semantic-ui-react'
 
 var Form1 = (props) => (
   <div>
+    <Container>
     <h1> Personal information </h1>
     <Form onSubmit={(e) => { props.renderForm2(e)}} onChange={(e) => {props.updateStateFromForm1(e)}}>
       <div>
@@ -33,6 +34,7 @@ var Form1 = (props) => (
         <Button primary type="submit"> Submit </Button>
       </div>
     </Form>
+    </Container>
   </div>
 );
 

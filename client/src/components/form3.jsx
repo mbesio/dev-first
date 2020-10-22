@@ -1,9 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Button, Form, Checkbox } from 'semantic-ui-react'
+import { Button, Form, Checkbox, Container } from 'semantic-ui-react'
 
 var From3 = (props) => (
   <div>
+    <Container>
     <h1> Interests </h1>
     <Form onSubmit={(e) => {props.renderSummary(e)}} onChange={(e) => {props.updateStateFromForm3(e)}}>
       <div>
@@ -54,6 +55,7 @@ var From3 = (props) => (
         <Button primary type="submit"> Submit </Button>
       </div>
     </Form>
+    </Container>
   </div>
 );
 
