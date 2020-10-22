@@ -1,10 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Button, Form } from 'semantic-ui-react'
 
 var Form1 = (props) => (
   <div>
     <h1> Personal information </h1>
-    <form onSubmit={(e) => { props.renderForm2(e)}} onChange={(e) => {props.updateStateFromForm1(e)}}>
+    <Form onSubmit={(e) => { props.renderForm2(e)}} onChange={(e) => {props.updateStateFromForm1(e)}}>
       <div>
         <label for="firstName"> First Name: </label>
         <input type="text" name="firstName"></input>
@@ -30,9 +30,9 @@ var Form1 = (props) => (
         <input type="file" onChange={(e) => {props.addPicture(e)}}></input>
       </div>
       <div>
-        <button type="submit"> Submit </button>
+        <Button primary type="submit"> Submit </Button>
       </div>
-    </form>
+    </Form>
   </div>
 );
 

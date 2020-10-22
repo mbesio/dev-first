@@ -1,15 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Button, Form } from 'semantic-ui-react'
 
 var From2 = (props) => (
   <div>
     <h1> Professional experience </h1>
-    <form onSubmit={(e) => { props.renderForm3(e)}} onChange={(e) => { props.updateStateFromForm2(e) }}>
+    <Form onSubmit={(e) => { props.renderForm3(e)}} onChange={(e) => { props.updateStateFromForm2(e) }}>
       <div>
         <label for="yearsExperience">Years of Experience:</label>
         <input type="text" name="yearsExperience"></input>
       </div>
       <div>
+      <Form.Group widths='equal'>
         <label for="language">Preferred coding language</label>
         <select name="language">
           <option value=""> -- Select a language -- </option>
@@ -24,9 +25,11 @@ var From2 = (props) => (
           <option value="medium"> Medium </option>
           <option value="low"> Low </option>
         </select>
+      </Form.Group>
       </div>
 
       <div>
+      <Form.Group widths='equal'>
         <label for="frontEndFramework"> Preferred frontend framework </label>
         <select name="frontEndFramework">
           <option value=""> -- Select a frontend framework -- </option>
@@ -41,8 +44,10 @@ var From2 = (props) => (
           <option value="medium"> Medium </option>
           <option value="low"> Low </option>
         </select>
+      </Form.Group>
       </div>
       <div>
+      <Form.Group widths='equal'>
         <label for="backEndFramework"> Preferred backend framework </label>
         <select name="backEndFramework">
           <option value=""> -- Select a backend framework -- </option>
@@ -57,11 +62,12 @@ var From2 = (props) => (
           <option value="medium"> Medium </option>
           <option value="low"> Low </option>
         </select>
+      </Form.Group>
       </div>
       <div>
-        <button type="submit"> Submit </button>
+        <Button primary type="submit"> Submit </Button>
       </div>
-    </form>
+    </Form>
   </div>
 
 );

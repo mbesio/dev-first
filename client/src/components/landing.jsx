@@ -1,14 +1,14 @@
 // example of statless component below
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { Button } from 'semantic-ui-react';
 
 var Landing = (props) => (
-  <div>
+  <div >
     <h1> Welcome to devfirst.io </h1>
     <h2> Land your dream software engineering job today </h2>
     <div>
-      <button type = "button" name = "Signup" onClick = {(e) => { props.renderForm1(e) }}> Signup </button>
-      <button type = "button" name = "Login" onClick = {() => console.log('hello, login button clicked')}> Login </button>
+      <Button primary type = "button" name = "Signup" onClick = {(e) => { props.renderForm1(e) }}> Signup </Button>
+      <Button primary type = "button" name = "Login" onClick = {() => console.log('hello, login button clicked')}> Login </Button>
     </div>
   </div>
 );
