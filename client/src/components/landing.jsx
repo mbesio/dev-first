@@ -9,7 +9,7 @@ var Landing = (props) => (
     <h2> Land your dream software engineering job today </h2>
     <div>
       <Button primary type = "button" name = "Signup" onClick = {(e) => { props.renderForm1(e) }}> Signup </Button>
-      <Button primary type = "button" name = "Login" onClick = {() => console.log('hello, login button clicked')}> Login </Button>
+      <Button primary type = "button" name = "Login" onClick = {(e) => { props.renderLogin(e) }}> Login </Button>
     </div>
     </Container>
   </div>

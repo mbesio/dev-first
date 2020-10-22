@@ -20,7 +20,7 @@ var Form1 = (props) => (
       </div>
       <div>
         <label for="password"> Password: </label>
-        <input type="text" name="password"></input>
+        <input type="password" name="password"></input>
       </div>
       <div>
         <label for="location"> Location: </label>

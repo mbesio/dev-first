@@ -6,6 +6,7 @@ import axios from 'axios';
 
 import Landing from './landing.jsx';
 import Form1 from './form1.jsx';
+import Login from './login.jsx';
 import Form2 from './form2.jsx';
 import Form3 from './form3.jsx';
 import Summary from './summary.jsx';
@@ -21,6 +22,7 @@ class App extends React.Component {
       // State to decide which page to render to the screen
       landingIsVisible: true,
       form1IsVisible: false,
+      loginIsVisible: false,
       form2IsVisible: false,
       form3IsVisible: false,
       reviewIsVisible: false,
@@ -62,6 +64,7 @@ class App extends React.Component {
       job2: {}
     }
     this.renderForm1 = this.renderForm1.bind(this);
+    this.renderLogin = this.renderLogin.bind(this);
     this.renderForm2 = this.renderForm2.bind(this);
     this.renderForm3 = this.renderForm3.bind(this);
     this.renderSummary = this.renderSummary.bind(this);
@@ -81,6 +84,16 @@ class App extends React.Component {
     this.setState({
       landingIsVisible: false,
       form1IsVisible: true
+    })
+  }
+
+  renderLogin(e) {
+    console.log('clicked the sign in form')
+    console.log(e)
+    e.preventDefault();
+    this.setState({
+      landingIsVisible: false,
+      loginIsVisible: true
     })
   }
 
@@ -211,7 +224,8 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1}/>}
+        { this.state.landingIsVisible && <Landing renderForm1 = {this.renderForm1} renderLogin ={this.renderLogin}/>}
+        { this.state.loginIsVisible && <Login />}
         { this.state.form1IsVisible && <Form1 renderForm2 = {this.renderForm2} updateStateFromForm1={this.updateStateFromForm1} addPicture={this.addPicture}/>}
         { this.state.form2IsVisible && <Form2 renderForm3 = {this.renderForm3} updateStateFromForm2={this.updateStateFromForm2}/>}
         { this.state.form3IsVisible && <Form3 renderSummary = {this.renderSummary} updateStateFromForm3={this.updateStateFromForm3}/>}
