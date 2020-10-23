@@ -205,14 +205,19 @@ class App extends React.Component {
 
   // check if user that is trying to login exists
   checkIfUserExists(){
-    axios.get('/login', {loginEmail: this.state.loginEmail,
-    loginPassword: this.state.loginPassword})
+    axios({
+      method: 'get',
+      url: 'login',
+      params: {
+        loginEmail: this.state.loginEmail,
+        loginPassword: this.state.loginPassword
+      }
+    })
       .then ((res) => {
         console.log('res ', res);
         console.log('this is what came back from the get request');
       })
   }
-
 
   // method to get tailored jobs for users
   getTailoredJobs() {

@@ -2,6 +2,9 @@ const express = require('express');
 const app = express();
 
 const bodyParser = require('body-parser');
+var models = require('./database/models.js');
+var Promise = require("bluebird");
+
 
 const getJobs = require('./server/models.js');
 const database = require('./database/index.js');
@@ -34,6 +37,22 @@ app.post('/newuser', (req, res) => {
 });
 
 app.get('/login', (req, res) => {
+  var username = req.query.loginEmail;
+  var password = req.query.loginPassword;
+
+  models.getUserDataFromDB(username, password, (result) => {
+    console.log('result in server: ', result)
+    if (result.length === 0 ) {
+      console.log('User does not exits');
+      res.status(300).end();
+    } else {
+      console.log('User exists');
+      res.status(200).end(result);
+    }
+  });
+//    .then(console.log('in the then block!'))
+//    .catch(console.log('in the catch block!'))
+
   // check if user and pwd exist in the user database
     // if true, pass back infomration for thet user stored in the database to the client
   // else, return message that user does not exist
