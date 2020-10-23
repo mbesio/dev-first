@@ -40,24 +40,46 @@ app.get('/login', (req, res) => {
   var username = req.query.loginEmail;
   var password = req.query.loginPassword;
 
-  models.getUserDataFromDB(username, password, (result) => {
+  models.getUserDataFromDB(username, password, (err, result) => {
     console.log('result in server: ', result)
     if (result.length === 0 ) {
       console.log('User does not exits');
-      res.status(300).end();
+      res.status(400).end();
     } else {
       console.log('User exists');
-      res.status(200).end(result);
+      var returnObject = {
+        firstName: result[0].firstName,
+        lastName: result[0].lastName,
+        email: result[0].email,
+        password: result[0].password,
+        location: result[0].location,
+        yearsExperience: result[0].yearsExperience,
+        language: result[0].language,
+        languageSkill: result[0].languageSkill,
+        frontEndFramework: result[0].frontEndFramework,
+        frontEndFrameworkSkill: result[0].frontEndFrameworkSkill,
+        backEndFramework: result[0].backEndFramework,
+        backEndFrameworkSkill: result[0].backEndFrameworkSkill,
+        aerospace: result[0].aerospace,
+        construction: result[0].construction,
+        education: result[0].education,
+        energy: result[0].energy,
+        entertainment: result[0].entertainment,
+        finance: result[0].finance,
+        food: result[0].food,
+        healthcare: result[0].healthcare,
+        hospitality: result[0].hospitality,
+        tech: result[0].tech,
+        telco: result[0].telco,
+        transport: result[0].transport
+      }
+      console.log('returnObject ', returnObject);
+
+      res.status(200).end(JSON.stringify(returnObject));
+
     }
   });
-//    .then(console.log('in the then block!'))
-//    .catch(console.log('in the catch block!'))
-
-  // check if user and pwd exist in the user database
-    // if true, pass back infomration for thet user stored in the database to the client
-  // else, return message that user does not exist
-  console.log('need to query the database')
-  res.end('hi');
+  //res.end('hi');
 })
 
 app.get('/jobs', (req, res) => {

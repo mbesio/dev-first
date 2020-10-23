@@ -215,6 +215,36 @@ class App extends React.Component {
     })
       .then ((res) => {
         console.log('res ', res);
+        console.log('res.data ', res.data);
+        this.setState({
+          loginIsVisible: false,
+          reviewIsVisible: true,
+          firstName: res.data.firstName,
+          lastName: res.data.lastName,
+          email: res.data.email,
+          password: res.data.password,
+          location: res.data.location,
+          yearsExperience: res.data.yearsExperience,
+          language: res.data.language,
+          languageSkill: res.data.languageSkill,
+          frontEndFramework: res.data.frontEndFramework,
+          frontEndFrameworkSkill: res.data.frontEndFrameworkSkill,
+          backEndFramework: res.data.backEndFramework,
+          backEndFrameworkSkill: res.data.backEndFrameworkSkill,
+          aerospace: res.data.aerospace,
+          construction: res.data.construction,
+          education: res.data.education,
+          energy: res.data.energy,
+          entertainment: res.data.entertainment,
+          finance: res.data.finance,
+          food: res.data.food,
+          healthcare: res.data.healthcare,
+          hospitality: res.data.hospitality,
+          tech: res.data.tech,
+          telco: res.data.telco,
+          transport: res.data.transport
+        })
+
         console.log('this is what came back from the get request');
       })
   }

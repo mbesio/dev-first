@@ -7,7 +7,7 @@ function getUserDataFromDB(username, password, cb) {
     if (err) {
       cb(err);
     } else {
-      cb(result);
+      cb(null, result);
     }
   });
 }
