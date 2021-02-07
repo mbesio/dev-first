@@ -1,6 +1,6 @@
 # Find your dream eng job #
 
-![alt text](https://github.com/mbesio/dev-first/blob/master/devfirst.mp4 "Devs First app")
+![alt text](https://github.com/mbesio/dev-first/blob/master/devFirst.mp4 "Devs First app")
 
 ## Devs First ##
   > __Devs First__, where software engineers find their perfect job .
