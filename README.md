@@ -32,7 +32,7 @@
 
 ## Run the project ##
 
-> This project is built with React, Node, Express and MySql. It uses the [Adzana API](https://developer.adzuna.com/). Adzana API to get tailores jobs, you will need to create a profile and get the required tokens.
+> This project is built with React, Node, Express and MySql. It uses the [Adzana API](https://developer.adzuna.com/) to get tailored jobs, you will need to create a profile and get the required tokens.
 
 ## Table of Contents
 
